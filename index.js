@@ -1,6 +1,6 @@
 const server = require('./server');
-const globalMiddlewares = require('./middleware/setup.middleware');
+const resolver = require('./utils/resolver');
 
-server.setupMiddleware(globalMiddlewares);
+server.setupMiddleware(resolver.middleware('setup'));
 
 server.start();
