@@ -1,8 +1,8 @@
 {
   "**/*.+(js)": [
-    "eslint --fix", "git add"
+    "eslint --fix"
   ],
   "**/*.+(js|json)": [
-    "prettier --write", "git add"
+    "prettier --write"
   ]
 }

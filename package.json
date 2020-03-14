@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
     "lint": "eslint --quiet --ignore-path .gitignore \"**/*.+(js)\"",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(js)\"",
     "format": "npm run prettier -- --write",
@@ -33,6 +34,7 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.3",
+    "jest": "^25.1.0",
     "lint-staged": "^10.0.8",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1"
