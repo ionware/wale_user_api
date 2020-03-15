@@ -8,5 +8,5 @@ cache:
 install:
   - sudo apt update -y
   - npm install
-script: npm run validate
+script: npm run build
 after_script: npx codecov
