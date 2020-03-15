@@ -1,11 +1,12 @@
+os: linux
 language: node_js
 node_js:
-  - lts
+  - 10
   - 8
 cache:
   - npm
 install:
-  - apt update -y
+  - sudo apt update -y
   - npm install
 script: npm run validate
 after_script: npx codecov
