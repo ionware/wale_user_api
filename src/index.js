@@ -1,6 +1,6 @@
-const server = require('./server');
+const server = require('./createServer');
 const resolver = require('./utils/resolver');
-const registerModels = require('./utils/register-models').default;
+const registerModels = require('./utils/register-models');
 
 registerModels('models'); // only after the database is started and start the server simultanously.
 

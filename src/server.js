@@ -1,10 +1,9 @@
 const express = require('express');
-const config = require('config');
 
 class Server {
   // eslint-disable-next-line no-shadow
-  constructor(config) {
-    this.app = express();
+  constructor(app = null, config) {
+    this.app = app || express();
     this.config = config;
   }
 
@@ -39,15 +38,4 @@ class Server {
   }
 }
 
-let serverInstance = null;
-
-// Server Instance should be a singleton instance.
-function createServer() {
-  if (serverInstance === null) {
-    serverInstance = new Server(config.util.toObject());
-  }
-
-  return serverInstance;
-}
-
-module.exports = createServer();
+module.exports = Server;
