@@ -3,13 +3,22 @@
 const fs = require('fs');
 const path = require('path');
 
-function registerModels(modelPath) {
+function loadModels(modelPath) {
   const modelLocation = path.resolve(__dirname, '../', modelPath);
   const models = fs
     .readdirSync(modelLocation)
     .map(model => path.join(modelLocation, model));
 
-  models.forEach(model => require(model));
+  return models;
 }
 
-module.exports = registerModels;
+function registerModels(modelPath, callback) {
+  const method = callback || require;
+
+  loadModels(modelPath).forEach(model => method(model));
+}
+
+module.exports = {
+  registerModels,
+  loadModels
+};
