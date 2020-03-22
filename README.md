@@ -1,14 +1,11 @@
-<p align="center">
+<div>
   <a href="https://travis-ci.com/github/ionware/wale_user_api">
-    <img src="https://img.shields.io/travis/com/ionware/wale_user_api">
+    <img src="https://img.shields.io/travis/com/ionware/wale_user_api"/>
   </a>
   <a href="https://codecov.io/gh/ionware/wale_user_api">
-    <img src="https://img.shields.io/codecov/c/github/ionware/wale_user_api">
+    <img src="https://codecov.io/gh/ionware/wale_user_api/branch/master/graph/badge.svg"/>
   </a>
-  <a href="https://twitter.com/ionwarez">
-    <img src="https://img.shields.io/twitter/follow/ionwarez?style=social">
-  </a>
-</p>
+</div>
 
 # Wale
 Pronounced _wa-le_, meaning "seek house". Wale is a word form the [Yoruba](https://en.wikipedia.org/wiki/Yoruba_language) language.
