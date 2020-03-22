@@ -40,7 +40,7 @@ class Resolver {
   }
 
   model(modelName) {
-    const moduleExports = this.resolve(this.modelsPath, modelName);
+    const moduleExports = this.resolve(this.modelsPath, `${modelName}.model`);
 
     return moduleExports;
   }
