@@ -1,10 +1,12 @@
 {
   "db": {
     "engine": "mongodb",
-    "url": "mongodb://127.0.0.1/wale"
+    "url": "mongodb://127.0.0.1",
+    "db": "wale"
   },
   "server": {
     "host": "127.0.0.1",
     "port": 8081
-  }
+  },
+  "startup": ["db:start"]
 }

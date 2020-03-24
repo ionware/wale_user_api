@@ -1,4 +1,5 @@
 const express = require('express');
+const resolver = require('./utils/resolver');
 
 class Server {
   // eslint-disable-next-line no-shadow
@@ -29,8 +30,20 @@ class Server {
     this.app.use(path, middleware);
   }
 
+  startupService() {
+    const services = this.config.startup;
+    if (!services || !services.length) return;
+
+    services.forEach(service => {
+      const [name, command] = String.prototype.split.call(service, ':');
+      const serviceModule = resolver.service(name);
+      serviceModule[command](this.config[name] || this.config);
+    });
+  }
+
   start() {
     const {port} = this.config.server;
+    this.startupService();
     // eslint-disable-next-line no-console
     console.log(`Started server on ${port}`);
 
